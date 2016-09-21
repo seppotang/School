@@ -60,7 +60,7 @@ public class cookieCount {
     
 }
 
-public class NewClass {
+public class MPGCalc {
     public static void main(String[] args) {
         int numMilesDriven;
         String milesDriven;
