@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class MPGCalc {
     public static void main(String[] args) {
         int numMilesDriven;
