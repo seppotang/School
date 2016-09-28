@@ -29,11 +29,11 @@ public class GasExpenses {
 		
 		//Calculate gallons used per week and year
 		double gallonsPerWeek = milesPerWeek / mpg;
-		double gallonsPerYear = gallonsPerWeek * 52.;
+		double gallonsPerYear = milesPerYear / mpg;
 		
 		//Calculate cost of gas over week and year time periods
 		double gasCostPerWeek = gallonsPerWeek * gasCost;
-		double gasCostPerYear = gasCostPerWeek * 52.;
+		double gasCostPerYear = gallonsPerYear * gasCost;
 		
 		//Inform user of conversion from miles per week to miles per year
 		System.out.println("At " + milesPerWeek + " per week, you travel " 
@@ -57,7 +57,7 @@ public class GasExpenses {
 		
 		//Update gasCost values
 		gasCostPerWeek = gallonsPerWeek * gasCost;
-		gasCostPerYear = gasCostPerWeek * 52;
+		gasCostPerYear = gasCostPerYear * gasCost;
 		
 		System.out.println("Gas expense per week: $" + gasCostPerWeek);
 		System.out.println("Gas expense per year: $" + gasCostPerYear);
