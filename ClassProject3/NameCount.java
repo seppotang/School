@@ -3,7 +3,7 @@ package SchoolProject3;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class nameCount {
+public class NameCount {
 
     /**
      * @param args the command line arguments
