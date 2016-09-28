@@ -55,6 +55,10 @@ public class GasExpenses {
 		//Increment Gas Cost
 		gasCost += 1.;
 		
+		//Update gasCost values
+		gasCostPerWeek = gallonsPerWeek * gasCost;
+		gasCostPerYear = gasCostPerWeek * 52;
+		
 		System.out.println("Gas expense per week: $" + gasCostPerWeek);
 		System.out.println("Gas expense per year: $" + gasCostPerYear);
 		
