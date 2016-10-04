@@ -49,8 +49,8 @@ public class GasExpenses {
 		System.out.println("Gas expense per year: $" + gasCostPerYear);
 		
 		//Inform user of possible cost increase if gas is incremented by $1
-		System.out.println(" If gas goes up by one dollar per gallon to $"
-			+ (gasCost + 1) + "per gallon, you will spend:");
+		System.out.println("If gas goes up by one dollar per gallon to $"
+			+ (gasCost + 1) + " per gallon, you will spend:");
 		
 		//Increment Gas Cost
 		gasCost += 1.;
