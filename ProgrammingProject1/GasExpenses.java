@@ -35,32 +35,34 @@ public class GasExpenses {
 		double gasCostPerWeek = gallonsPerWeek * gasCost;
 		double gasCostPerYear = gallonsPerYear * gasCost;
 		
+		// FROM HERE DOWN CHANGE DECIMAL FORMATTING
+		
 		//Inform user of conversion from miles per week to miles per year
-		System.out.println("At " + milesPerWeek + " per week, you travel " 
+		System.out.println("At " + milesPerWeek + " per week, you travel "  
 			+ milesPerYear + " miles per year.");
 		
 		//Inform user of amount of gallons of gas used per week and year
-		System.out.println("Gallons per week: " + gallonsPerWeek + " gallons.");
-		System.out.println("Gallons per year: " + gallonsPerYear + " gallons.");
+		System.out.printf("Gallons per week: " + "%.1f" + " gallons.%n", gallonsPerWeek);
+		System.out.printf("Gallons per year: " + "%.1f" + " gallons.%n", gallonsPerYear);
 		
 		//Inform user of how much they spend on gas per week and year
 		System.out.println("With gas at $" + gasCost + " per gallon, you will spend:");
-		System.out.println("Gas expense per week: $" + gasCostPerWeek);
-		System.out.println("Gas expense per year: $" + gasCostPerYear);
-		
-		//Inform user of possible cost increase if gas is incremented by $1
-		System.out.println("If gas goes up by one dollar per gallon to $"
-			+ (gasCost + 1) + " per gallon, you will spend:");
+		System.out.printf("Gas expense per week: $" + "%.2f%n", gasCostPerWeek);
+		System.out.printf("Gas expense per year: $" + "%.2f%n", gasCostPerYear);
 		
 		//Increment Gas Cost
 		gasCost += 1.;
+		
+		//Inform user of possible cost increase if gas is incremented by $1
+		System.out.println("If gas goes up by one dollar per gallon to $"
+			+ gasCost + " per gallon, you will spend:");
 		
 		//Update gasCost values
 		gasCostPerWeek = gallonsPerWeek * gasCost;
 		gasCostPerYear = gasCostPerYear * gasCost;
 		
-		System.out.println("Gas expense per week: $" + gasCostPerWeek);
-		System.out.println("Gas expense per year: $" + gasCostPerYear);
+		System.out.printf("Gas expense per week: $%.2f%n", gasCostPerWeek);
+		System.out.printf("Gas expense per year: $%.2f%n", gasCostPerYear);
 		
 	} // End main
 } // End class GasExpenses
