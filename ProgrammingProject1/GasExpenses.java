@@ -7,6 +7,7 @@ public class GasExpenses {
 		/* Simple Gas Calculation app
 		 * @version 1.0
 		 * @author Michael Graves <mjgraves91@gmail.com>
+		 * 10.06.16
 		 */
 		
 		//Implement input for user
