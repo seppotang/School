@@ -34,9 +34,7 @@ public class GasExpenses {
 		//Calculate cost of gas over week and year time periods
 		double gasCostPerWeek = gallonsPerWeek * gasCost;
 		double gasCostPerYear = gallonsPerYear * gasCost;
-		
-		// FROM HERE DOWN CHANGE DECIMAL FORMATTING
-		
+				
 		//Inform user of conversion from miles per week to miles per year
 		System.out.println("At " + milesPerWeek + " per week, you travel "  
 			+ milesPerYear + " miles per year.");
