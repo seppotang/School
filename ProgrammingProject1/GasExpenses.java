@@ -13,17 +13,63 @@ public class GasExpenses {
 		//Implement input for user
 		Scanner keyboard = new Scanner(System.in);
 		
+                //Initialize variables
+                double milesPerWeek;
+                double mpg;
+                double gasCost;
 		//Ask for user's miles of commute per week
+		
+		//Check user input for non-int and less than or equal to zero int
+		do {
 		System.out.println("How many miles do you drive per week?");
-		double milesPerWeek = keyboard.nextDouble();
+		while (!keyboard.hasNextInt()) {
+			System.out.println("That's not a number!");
+                        System.out.println("How many miles do you drive "
+                                + "per week?");
+			keyboard.next();
+		}
+		milesPerWeek = keyboard.nextDouble();
+                    if(milesPerWeek<=0) {
+                        System.out.println("Please enter a positive number.");
+                    }
+		} while (milesPerWeek <= 0);
+		System.out.println("Thank you! Got " + milesPerWeek + 
+                        " miles per week.");
 		
 		//Ask for user's MPG
+		//Check user input for non-int and less than or equal to zero int
+		do {
 		System.out.println("How many miles per gallon does your auto get?");
-		double mpg = keyboard.nextDouble();
+		while (!keyboard.hasNextInt()) {
+			System.out.println("That's not a number!");
+			                 System.out.println("How many mpg does "
+                                                 + "your auto get?");
+                        keyboard.next();
+		}
+		mpg = keyboard.nextDouble();
+                    if(mpg<=0) {
+                        System.out.println("Please enter a positive number.");
+                    }
+		} while (mpg <= 0);
+		System.out.println("Thank you! Got " + mpg + " miles per gallon.");
+		
 		
 		//Ask for current cost of gas (USD)		
+		//Check user input for non-int and less than or equal to zero int
+		do {
 		System.out.println("What is the current cost of gas?");
-		double gasCost = keyboard.nextDouble();
+		while (!keyboard.hasNextDouble()) {
+			System.out.println("That's not a number.");
+                        System.out.println("What is the current cost of gas?");
+			keyboard.next();
+		}
+		gasCost = keyboard.nextDouble();
+                    if(gasCost <= 0) {
+                        System.out.println("Please enter a positive number.");
+                    }
+		} while (gasCost <= 0);
+		System.out.println("Thank you! Got " + gasCost + 
+                        " dollars per gallon.");
 		
 		//Calculate amount of miles user drives based on per week amount
 		double milesPerYear = milesPerWeek * 52.;
@@ -41,13 +87,18 @@ public class GasExpenses {
 			+ milesPerYear + " miles per year.");
 		
 		//Inform user of amount of gallons of gas used per week and year
-		System.out.printf("Gallons per week: " + "%.1f" + " gallons.%n", gallonsPerWeek);
-		System.out.printf("Gallons per year: " + "%.1f" + " gallons.%n", gallonsPerYear);
+		System.out.printf("Gallons per week: " + "%.1f" + 
+                        " gallons.%n", gallonsPerWeek);
+		System.out.printf("Gallons per year: " + "%.1f" + 
+                        " gallons.%n", gallonsPerYear);
 		
 		//Inform user of how much they spend on gas per week and year
-		System.out.println("With gas at $" + gasCost + " per gallon, you will spend:");
-		System.out.printf("Gas expense per week: $" + "%.2f%n", gasCostPerWeek);
-		System.out.printf("Gas expense per year: $" + "%.2f%n", gasCostPerYear);
+		System.out.println("With gas at $" + gasCost + 
+                        " per gallon, you will spend:");
+		System.out.printf("Gas expense per week: $" + 
+                        "%.2f%n", gasCostPerWeek);
+		System.out.printf("Gas expense per year: $" + 
+                        "%.2f%n", gasCostPerYear);
 		
 		//Increment Gas Cost
 		gasCost += 1.;
@@ -65,3 +116,4 @@ public class GasExpenses {
 		
 	} // End main
 } // End class GasExpenses
+
