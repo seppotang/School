@@ -1,6 +1,15 @@
+package javaapplication1;
+
+import static java.time.Clock.system;
 import java.util.Scanner;
 
-public class cookieCount {
+/**
+ *
+ * @author cwcis
+ */
+
+
+public class CookieCount {
 
     /**
      * @param args the command line arguments
@@ -21,13 +30,9 @@ public class cookieCount {
         cupsButter = 1*(cookieCount/48);
         cupsFlour = 2.75*(cookieCount/48);
         
-        System.out.println(cupsSugar);
-        System.out.println(cupsButter);
-        System.out.println(cupsFlour);
-        
-        
-        
-        
+        System.out.println(cupsSugar + " cups of sugar needed.");
+        System.out.println(cupsButter + " cups of butter needed.");
+        System.out.println(cupsFlour + " cups of flour needed.");
     }
     
 }
