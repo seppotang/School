@@ -17,19 +17,19 @@ public class CookieCount {
         
         int cookieCount;
         double cupsSugar;
-        int cupsButter;
+        double cupsButter;
         double cupsFlour;
         
         System.out.println("How many cookies are desired?");
         cookieCount=keyboard.nextInt();
         
-        cupsSugar = 1.5*(cookieCount/48);
-        cupsButter = 1*(cookieCount/48);
-        cupsFlour = 2.75*(cookieCount/48);
+        cupsSugar = 1.5*(cookieCount/48.);
+        cupsButter = 1*(cookieCount/48.);
+        cupsFlour = 2.75*(cookieCount/48.);
         
-        System.out.println(cupsSugar + " cups of sugar needed.");
-        System.out.println(cupsButter + " cups of butter needed.");
-        System.out.println(cupsFlour + " cups of flour needed.");
+        System.out.printf("%.2f cups of sugar needed.\n", cupsSugar);
+        System.out.printf("%.2f cups of butter needed.\n", cupsButter);
+        System.out.printf("%.2f cups of flour needed.\n", cupsFlour);
     }
     
 }
