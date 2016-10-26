@@ -40,7 +40,7 @@ public class GasExpenses {
 		//Check user input for non-int and less than or equal to zero int
 		do {
 		System.out.println("How many miles per gallon does your auto get?");
-		while (!keyboard.hasNextInt()) {
+		while (!keyboard.hasNextDouble()) {
 			System.out.println("That's not a number!");
 			                 System.out.println("How many mpg does "
                                                  + "your auto get?");
