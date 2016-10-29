@@ -86,6 +86,8 @@ public class Part1 {
             }
         }
         
+        System.out.println("");
+        
     }
     
 }
