@@ -66,3 +66,5 @@ public static void main(String[] args)
 		else if (computerPlay.equals("R")) 
 			System.out.println("Rock breaks scissors. You lose!!");
 }
+}
+}
