@@ -1,0 +1,30 @@
+Conversions
+Write a program that asks the user to enter a distance in meters.  The program will then present the following menu of selections.
+1.	Convert to kilometers
+2.	Convert to inches
+3.	Convert to feet
+4.	Quit the program
+The program will convert depending on the user request.  Here are the specific requirements.
+•	Write a void method named showKilometers which accepts the numberer of meters as an argument.  The  method should display the argument converted to kilometers.  Convert using this formula
+Kilometers = meters * .001
+•	Write a void method named showInches which accepts the numberer of meters as an argument.  The  method should display the argument converted to inches.  Convert using this formula
+inches = meters * 39.27
+•	Write a void method named showFeet which accepts the numberer of meters as an argument.  The  method should display the argument converted to feet.  Convert using this formula
+feet = meters * 3.281
+•	Write a void method named menu which displays the menu of selections.  This  method should not accept any arguments.
+•	The program should not accept any negative numbers for the distance in meters.
+•	If the user selects an invalid choice from the menu, the program should display an error message.
+
+Rock, Paper, Scissors
+Write a program that lets the user plan the game of Rock, Paper, Scissors agains the computer.  The program should work as follows.
+1.	When the program begins, a random number in the range of 1 to 3 is generated If the number is 1, the the computer has chosen rock.  If the number is 2, then the computer has chosen paper.  If the number is 3, then the computer has chosen scissors. (Don’t display the computer’s choice yet).
+2.	The user enters his or her choice of “rock”, “paper”, or “scissors” at the keyboard (a menu can b used)
+3.	The computer’s choice is displayed
+4.	A winner is selected according to these rules
+a.	If one player chooses rock and the other player chooses scissors, the rock wins
+b.	If one player chooses scissors and the other player chooses paper, then scissors wins
+c.	If one player chooses paper and the other player chooses rock, then paper wins
+d.	If both players choose the same choice, it’s a tie
+Be sure to divide the program into methods that perform each major task.
+
+
