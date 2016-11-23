@@ -1,25 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication4;
+
+/**
+ *
+ * @author Seppotang
+ */
 import java.util.*;
 
 public class RetailItem {
 	
-	//Variable initialization
+	   public static void main(String[] args) {}
+        
+    
 		private String Description; //Item description
 		private int unitsOnHand; //Number of items
 		private double price; //price of items
 		
-		public RetailItem(String description, int unitsOnHand, double price) {
-			this.description = Description;
-			this.unitsOnHand = unitsOnHand;
-			this.price = price;
-		}
 		
-		public void sellItem(int decrement) {
-			unitsOnHand-= decrement;
-			return price;
-		}
+		
+		public double sellItem(int decrement) {
+                    unitsOnHand -= decrement;
+                    return -(price * decrement);
+                }
 		
 		public void print(String name){
-			System.out.printf("%6s %-16s %5s %5s\n",name,Description,unitsOnHand,price);
+			System.out.printf("%6s %-16s %5s %5s\n",name,
+                                Description,unitsOnHand,price);
 		}
 		
 		public void setDesc(String description){
@@ -28,5 +38,7 @@ public class RetailItem {
 		
 		public void reStock(int increment) {
 			unitsOnHand += increment;
-		}
+                }
+		
+
 }
