@@ -1,3 +1,5 @@
+package javaapplication4;
+
 public class RetailItemDemo {
 	public static void main(String[] args) {
 		
