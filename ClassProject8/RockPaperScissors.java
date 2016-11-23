@@ -37,34 +37,35 @@ public static void main(String[] args)
     System.out.println("Enter your play: "); 
     myPlay = scan.next();
 
-    if (!myPlay.equals("rock") && !myPlay.equals("paper") && !myPlay.equals("scissors"))
+    if (!myPlay.equals("rock") && !myPlay.equals("paper") && 
+            !myPlay.equals("scissors"))
         System.out.println("Invalid move. Try again.");
 
 }
 
-    System.out.println("Computer's play is: " + compMove); 
+    System.out.println("Computer's play is: " + compPlay); 
 
 
-    if (personPlay.equals(computerPlay)) {
+    if (myPlay.equals(compPlay)) {
 		System.out.println("It's a tie!");
 	}
-	else if (personPlay.equals("R")) {
-		if (computerPlay.equals("S")) 
-			System.out.println("Rock crushes scissors. You win!!");
-		else if (computerPlay.equals("P")) 
-			System.out.println("Paper eats rock. You lose!!");
+	else if (myPlay.equals("rock")) {
+		if (compPlay.equals("scissors")) 
+			System.out.println("Rock beats scissors. You win!");
+		else if (compPlay.equals("paper")) 
+			System.out.println("Paper beats rock. You lose.");
 	}
-	else if (personPlay.equals("P")) {
-		if (computerPlay.equals("S")) 
-			System.out.println("Scissor cuts paper. You lose!!"); 
-		else if (computerPlay.equals("R")) 
-			System.out.println("Paper eats rock. You win!!");
+	else if (myPlay.equals("paper")) {
+		if (compPlay.equals("scissors")) 
+			System.out.println("Scissors beat paper. You lose."); 
+		else if (compPlay.equals("rock")) 
+			System.out.println("Paper beats rock. You win!");
 	} 
-	else if (personPlay.equals("S")) {
-		if (computerPlay.equals("P")) 
-			System.out.println("Scissor cuts paper. You win!!"); 
-		else if (computerPlay.equals("R")) 
-			System.out.println("Rock breaks scissors. You lose!!");
+	else if (myPlay.equals("scissors")) {
+		if (compPlay.equals("paper")) 
+			System.out.println("Scissor beats paper. You win!"); 
+		else if (compPlay.equals("rock")) 
+			System.out.println("Rock beats scissors. You lose.");
 }
 }
 }
