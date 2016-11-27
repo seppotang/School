@@ -8,27 +8,40 @@ import java.util.*;
 
 public class RetailItem {
 	
-	   public static void main(String[] args) {}
-        
-    
-		private String Description; //Item description
-		private int unitsOnHand; //Number of items
-		private double price; //price of items
-		
+        //Initialize Variables
+	private String description; //Item description
+	private int unitsOnHand; //Number of items
+	private double price; //price of items
+        public int leftover;
+
+ 
+	public RetailItem(String description, int unitsOnHand, double price){
+		this.price = price;
+		this.unitsOnHand = unitsOnHand;
+		this.description = description;
+	}
 		
 		
 		public double sellItem(int decrement) {
-                    unitsOnHand -= decrement;
-                    return -(price * decrement);
+                    if(unitsOnHand >= decrement) {
+                        unitsOnHand -= decrement;
+                        return (price * decrement);
+                    } else {
+                        leftover = unitsOnHand;
+                        unitsOnHand = 0;
+                        return (price * leftover);
+                    }   
                 }
+                        
+                
 		
 		public void print(String name){
 			System.out.printf("%6s %-16s %5s %5s\n",name,
-                                Description,unitsOnHand,price);
+                                description,unitsOnHand,price);
 		}
 		
 		public void setDesc(String description){
-			Description = description;
+			description = description;
 		}
 		
 		public void reStock(int increment) {
