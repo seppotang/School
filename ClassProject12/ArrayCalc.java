@@ -23,13 +23,11 @@ public class ArrayCalc {
         
         System.out.printf("%16s: %7.1f\n","Total", getTotal(sales));
        System.out.printf("%16s: %7.1f\n","Average",getAverage(sales));
-       /*
        System.out.printf("%16s: %7.1f\n","RowTotal",getRowTotal(sales,1));
        System.out.printf("%16s: %7.1f\n","ColumnTotal",getColumnTotal(sales,0));
        System.out.printf("%16s: %7.1f\n","RowHighestinRow",getHighestInRow(sales,2));
        System.out.printf("%16s: %7.1f\n","RowLowestinRow",getLowestInRow(sales,1));
        describe(sales);
-       */
        
     }
     
@@ -51,7 +49,8 @@ return sum;
         
 private static double getAverage(double[][] sales) {
 
-    double sum = 0.0;
+double sum = 0.0;
+
 for(int row = 0; row < sales.length; row++) {
     for(int col = 0; col < sales[row].length; col++) {
         sum += sales[row][col];
@@ -63,31 +62,54 @@ double average = sum / 12;
 return average;
 }
 
-private static double getRowTotal(double[] arrayName, int arrayIndex) {
-double getRowTotalAmt = 0.0;
-return getRowTotalAmt;
+private static double getRowTotal(double[][] sales, int rowNum) {
+double sum = 0.0;
+
+for(int col = 0; col < sales.length; col++) {
+	sum += sales[rowNum][col];
 }
 
-private static double getColumnTotal(double[] arrayName, int arrayIndex)
+return sum;
+}
+
+private static double getColumnTotal(double[][] sales, int colNum)
 {
-double getColumnTotalAmt = 0.0;
-return getColumnTotalAmt;
+double sum = 0.0;
+
+for(int row = 0; row < sales.length; row++) {
+	sum += sales[row][colNum];
 }
 
-private static double getHighestInRow(double[] arrayName, int arrayIndex)
+return sum;
+}
+
+private static double getHighestInRow(double[][] sales, int rowNum)
 {
-double getHighestInRowAmt = 0.0;
-return getHighestInRowAmt;
+double highestAmt = 0.0;
+
+for(int col = 0; col < sales.length; col++) {
+	if(sales[rowNum][colNum] > highestAmt) {
+		highestAmt = sales[rowNum][colNum];
+	}
+}
+return highestAmt;
 }
 
-private static double getLowestInRow(double[] arrayName, int arrayIndex) 
+private static double getLowestInRow(double[][] sales, int rowNum) 
 {
-double getLowestInRowAmt = 0.0;
-return getLowestInRowAmt;
+double lowestAmt = 10000;
+
+for(int col = 0; col < sales.length; col++) {
+	if(sales[rowNum][col] < lowestAmt) {
+		lowestAmt = sales[rowNum][colNum];
+	}
+}
+return lowestAmt;
 }
 
-private static void describe(double[] arrayName) {
+private static void describe(double[][] sales) {
 
+System.out.println("row: 0 has " );
 
 }
 
