@@ -37,6 +37,11 @@ public class IceCreamOrder extends JFrame {
     private double result=0.0;
     private double tax = .06;
     
+    //Initialize strings
+    private String flavorName = null;
+    private String nutsStatus = null;
+    private String cherryStatus = null;
+    
     
     //Main method;;
     public static void main(String[] args) {
@@ -128,14 +133,7 @@ public class IceCreamOrder extends JFrame {
     
      private class ButtonListener implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
-                String input;
-                double buffer1 = 0.00;
-                double buffer2 = 0.00;
-                String flavorName = null;
-                String nutsStatus = null;
-                String cherryStatus = null;
-                //Get minutes
-
+                
                 //Determine which radio button was clicked
                 if(e.getSource() == vanillaButton) {
                     flavorName = "Vanilla";
@@ -146,12 +144,19 @@ public class IceCreamOrder extends JFrame {
                     result = 2.25;
                 }
                 else if(e.getSource() == saveButton) {
-                    try {
-                        saveFunction(flavorName, nutsStatus, cherryStatus);
-                    } catch (IOException ex) {
-                        Logger.getLogger(IceCreamOrder.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    }
+                    try{
+                        nutsCheck();
+                        File file = new File("C:\\Users\\Seppotang\\Desktop\\icecream.txt");
+                        PrintWriter writer = new PrintWriter(file, "UTF-8");
+                        writer.println(flavorName);
+                        writer.println(nutsStatus);
+                        writer.println(cherryStatus);
+                        writer.close();
+                        } catch (IOException f) {
+                            f.printStackTrace();
+                        }
+                    } 
+                    
                 else if (e.getSource() == strawButton) {
                     flavorName = "Strawberry";
                     result = 2.25;
@@ -195,10 +200,10 @@ public class IceCreamOrder extends JFrame {
                 
         }
         
-        public void saveFunction(String flavorName, String nutsStatus, 
-                String cherryStatus) throws IOException {
+        public void saveFunction() throws IOException {
            try{
-            PrintWriter writer = new PrintWriter("icecream.txt", "UTF-8");
+            File file = new File("icecream.txt");
+            PrintWriter writer = new PrintWriter(file, "UTF-8");
             writer.println(flavorName);
             writer.println(nutsStatus);
             writer.println(cherryStatus);
@@ -207,6 +212,31 @@ public class IceCreamOrder extends JFrame {
             }
         }
         
+        public void nutsCheck() {
+            if(nutsButton.isSelected() && 
+                        !(cherriesButton.isSelected())) {
+                        nutsStatus = "With_Nuts";
+                        cherryStatus = "Without_Cherries";
+                    } else if(cherriesButton.isSelected() && 
+                            nutsButton.isSelected()) {
+                        nutsStatus = "With_Nuts";
+                        cherryStatus = "With_Cherries";
+                    } else if(cherriesButton.isSelected()&& 
+                            !(nutsButton.isSelected())) {
+                        nutsStatus = "Without_Nuts";
+                        cherryStatus = "With_Cherries";
+                    } else if(!(nutsButton.isSelected()&&
+                            cherriesButton.isSelected())) {
+                        nutsStatus = "Without_Nuts";
+                        cherryStatus = "Without_Cherries";
+                    }
+        }
+        
+        public void restoreFunction() {
+            
+        }
+        
     }
-    
+     
+     
 }
