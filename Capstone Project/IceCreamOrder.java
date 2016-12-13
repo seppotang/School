@@ -196,6 +196,10 @@ public class IceCreamOrder extends JFrame {
                     (result + addition)*tax,
                     (result+ addition)+tax*(result+addition)));
                 }
+				
+				else if(e.getSource() == restoreButton) {
+					restoreFunction();
+				}
                 
                 
         }
@@ -232,8 +236,21 @@ public class IceCreamOrder extends JFrame {
                     }
         }
         
-        public void restoreFunction() {
-            
+        public String restoreFunction() {
+		
+			try {
+			Scanner in = new Scanner(System.in);
+			
+			in = new Scanner(icecream.txt);
+			
+			while(in.hasNextLine()) {
+				String line = input.nextLine();
+				System.out.println(line);
+			}
+			input.close();
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
         }
         
     }
