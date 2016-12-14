@@ -131,10 +131,11 @@ public class IceCreamOrder extends JFrame {
         add(panel3,BorderLayout.EAST);
     }
     
+	//Button Listener = Class for button actions
      private class ButtonListener implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                 
-                //Determine which radio button was clicked
+                //Determine which button of any type was clicked
                 if(e.getSource() == vanillaButton) {
                     flavorName = "Vanilla";
                     result= 2.25;
@@ -197,6 +198,7 @@ public class IceCreamOrder extends JFrame {
                     (result+ addition)+tax*(result+addition)));
                 }
 				
+				//Restore function, should pull information from save and IP information
 				else if(e.getSource() == restoreButton) {
 					restoreFunction();
 				}
@@ -204,6 +206,11 @@ public class IceCreamOrder extends JFrame {
                 
         }
         
+		//Method for saveButton;; Saves to icecream.txt on desktop.
+		
+		/* Decided not to use because try {catch} was acting up.
+		
+		
         public void saveFunction() throws IOException {
            try{
             File file = new File("icecream.txt");
@@ -215,7 +222,9 @@ public class IceCreamOrder extends JFrame {
             } catch (IOException e) {
             }
         }
-        
+        */
+		
+		//Method for checking status for Nuts and Cherries.
         public void nutsCheck() {
             if(nutsButton.isSelected() && 
                         !(cherriesButton.isSelected())) {
@@ -236,16 +245,41 @@ public class IceCreamOrder extends JFrame {
                     }
         }
         
+		//Method for restoring from Save file
         public String restoreFunction() {
 		
 			try {
 			Scanner in = new Scanner(System.in);
 			
-			in = new Scanner(icecream.txt);
+			in = new Scanner("C:\\Users\\Seppotang\\Desktop\\icecream.txt");
 			
+			
+			//Should read each line and when it reads the whole file (3 lines) it should finish
 			while(in.hasNextLine()) {
 				String line = input.nextLine();
-				System.out.println(line);
+				switch(line) {
+					case "Vanilla":
+						vanillaButton.setSelected(true);
+						break;
+					case "Chocolate":
+						chocButton.setSelected(true);
+						break;
+					case "With_Nuts":
+						nutsButton.setSelected(true);
+						break;
+					case "Without_Nuts":
+						nutsButton.setSelected(false);
+						break;
+					case "With_Cherries":
+						cherriesButton.setSelected(true);
+						break;
+					case "Without_Cherries":
+						cherriesButton.setSelected(false);
+						break;
+					default:
+						break;
+					
+				}
 			}
 			input.close();
 			} catch (Exception ex) {
