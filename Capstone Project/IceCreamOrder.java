@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -72,7 +73,7 @@ public class IceCreamOrder extends JFrame {
     
     //Method for adding a label, 3 radio buttons, and a calculate button.
     private void buildPanel() {
-			
+         
         //Create a Grid Layout manager with 3 rows and one column
         setLayout(new GridLayout(0,1));
 
@@ -131,7 +132,7 @@ public class IceCreamOrder extends JFrame {
         add(panel3,BorderLayout.EAST);
     }
     
-	//Button Listener = Class for button actions
+   //Button Listener = Class for button actions
      private class ButtonListener implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
                 
@@ -197,20 +198,20 @@ public class IceCreamOrder extends JFrame {
                     (result + addition)*tax,
                     (result+ addition)+tax*(result+addition)));
                 }
-				
-				//Restore function, should pull information from save and IP information
-				else if(e.getSource() == restoreButton) {
-					restoreFunction();
-				}
+            
+            //Restore function, should pull information from save and IP information
+            else if(e.getSource() == restoreButton) {
+               restoreFunction();
+            }
                 
                 
         }
         
-		//Method for saveButton;; Saves to icecream.txt on desktop.
-		
-		/* Decided not to use because try {catch} was acting up.
-		
-		
+      //Method for saveButton;; Saves to icecream.txt on desktop.
+      
+      /* Decided not to use because try {catch} was acting up.
+      
+      
         public void saveFunction() throws IOException {
            try{
             File file = new File("icecream.txt");
@@ -223,8 +224,8 @@ public class IceCreamOrder extends JFrame {
             }
         }
         */
-		
-		//Method for checking status for Nuts and Cherries.
+      
+      //Method for checking status for Nuts and Cherries.
         public void nutsCheck() {
             if(nutsButton.isSelected() && 
                         !(cherriesButton.isSelected())) {
@@ -245,46 +246,47 @@ public class IceCreamOrder extends JFrame {
                     }
         }
         
-		//Method for restoring from Save file
+      //Method for restoring from Save file
         public String restoreFunction() {
-		
-			try {
-			Scanner in = new Scanner(System.in);
-			
-			in = new Scanner("C:\\Users\\Seppotang\\Desktop\\icecream.txt");
-			
-			
-			//Should read each line and when it reads the whole file (3 lines) it should finish
-			while(in.hasNextLine()) {
-				String line = input.nextLine();
-				switch(line) {
-					case "Vanilla":
-						vanillaButton.setSelected(true);
-						break;
-					case "Chocolate":
-						chocButton.setSelected(true);
-						break;
-					case "With_Nuts":
-						nutsButton.setSelected(true);
-						break;
-					case "Without_Nuts":
-						nutsButton.setSelected(false);
-						break;
-					case "With_Cherries":
-						cherriesButton.setSelected(true);
-						break;
-					case "Without_Cherries":
-						cherriesButton.setSelected(false);
-						break;
-					default:
-						break;
-					
-				}
-			}
-			input.close();
-			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
+      
+         try {
+         Scanner in = new Scanner(System.in);
+         
+         in = new Scanner("C:\\Users\\Seppotang\\Desktop\\icecream.txt");
+
+         
+         //Should read each line and when it reads the whole file (3 lines) it should finish
+         while(in.hasNextLine()) {
+            String line = in.nextLine();
+            switch(line) {
+               case "Vanilla":
+                  vanillaButton.setSelected(true);
+                  break;
+               case "Chocolate":
+                  chocButton.setSelected(true);
+                  break;
+               case "With_Nuts":
+                  nutsButton.setSelected(true);
+                  break;
+               case "Without_Nuts":
+                  nutsButton.setSelected(false);
+                  break;
+               case "With_Cherries":
+                  cherriesButton.setSelected(true);
+                  break;
+               case "Without_Cherries":
+                  cherriesButton.setSelected(false);
+                  break;
+               default:
+                  break;
+               
+            }
+         }
+         in.close();
+         } catch (Exception ex) {
+            ex.printStackTrace();
+         }
+            return "";
         }
         
     }
